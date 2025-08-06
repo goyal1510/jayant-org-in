@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import { ThemeToggle } from "@/components/theme-toggle"
 import { Menu, X } from "lucide-react"
 
 const navItems = [
@@ -17,11 +18,25 @@ const navItems = [
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [activeSection, setActiveSection] = useState("home")
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
+      
+      // Scroll spy functionality
+      const sections = navItems.map(item => item.href.replace('#', ''))
+      const scrollPosition = window.scrollY + 100
+
+      for (const section of sections.reverse()) {
+        const element = document.getElementById(section)
+        if (element && element.offsetTop <= scrollPosition) {
+          setActiveSection(section)
+          break
+        }
+      }
     }
+    
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
@@ -55,23 +70,48 @@ export function Navigation() {
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
-            {navItems.map((item, index) => (
-              <motion.button
-                key={item.name}
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                onClick={() => scrollToSection(item.href)}
-                className="text-foreground/80 hover:text-primary transition-colors duration-200"
-              >
-                {item.name}
-              </motion.button>
-            ))}
+          <div className="hidden md:flex items-center space-x-8">
+            {navItems.map((item, index) => {
+              const isActive = activeSection === item.href.replace('#', '')
+              return (
+                <motion.button
+                  key={item.name}
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  onClick={() => scrollToSection(item.href)}
+                  className={`relative transition-colors duration-200 ${
+                    isActive 
+                      ? "text-primary" 
+                      : "text-foreground/80 hover:text-primary"
+                  }`}
+                >
+                  {item.name}
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeSection"
+                      className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full"
+                      initial={false}
+                      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    />
+                  )}
+                </motion.button>
+              )
+            })}
+            
+            {/* Theme Toggle */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.6 }}
+            >
+              <ThemeToggle />
+            </motion.div>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            <ThemeToggle />
             <Button
               variant="ghost"
               size="icon"
@@ -91,15 +131,22 @@ export function Navigation() {
             className="md:hidden border-t border-border bg-background/95 backdrop-blur-md"
           >
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left px-3 py-2 text-foreground/80 hover:text-primary hover:bg-accent rounded-md transition-colors duration-200"
-                >
-                  {item.name}
-                </button>
-              ))}
+              {navItems.map((item) => {
+                const isActive = activeSection === item.href.replace('#', '')
+                return (
+                  <button
+                    key={item.name}
+                    onClick={() => scrollToSection(item.href)}
+                    className={`block w-full text-left px-3 py-2 rounded-md transition-colors duration-200 ${
+                      isActive
+                        ? "text-primary bg-primary/10"
+                        : "text-foreground/80 hover:text-primary hover:bg-accent"
+                    }`}
+                  >
+                    {item.name}
+                  </button>
+                )
+              })}
             </div>
           </motion.div>
         )}
