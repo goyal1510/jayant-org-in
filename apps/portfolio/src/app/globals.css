@@ -53,8 +53,22 @@
   * {
     @apply border-border;
   }
+  
+  html {
+    overflow-x: hidden;
+  }
+  
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+  
+  /* Prevent horizontal scroll on mobile */
+  #__next {
+    overflow-x: hidden;
+    width: 100%;
   }
 }
 
@@ -73,4 +87,15 @@
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-muted-foreground/40;
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  
+  * {
+    max-width: 100vw;
+  }
 }
