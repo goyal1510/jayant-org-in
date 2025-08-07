@@ -195,11 +195,11 @@ body {
   border: 2px solid var(--button-gradient-1);
   color: var(--text-secondary);
   cursor: pointer;
-  padding: 6px;
+  padding: 8px;
   border-radius: 8px;
   transition: all 0.3s ease;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   flex-shrink: 0;
   position: relative;
   box-shadow: 0 2px 4px rgba(79, 70, 229, 0.1);
@@ -1243,7 +1243,8 @@ body {
   }
 
   .entry-info {
-    padding: 3px 4px;
+    padding: 4px 6px;
+    min-height: 24px;
   }
 
   .entry-time {
@@ -1393,18 +1394,18 @@ body {
 
   .calculator-theme-toggle {
     width: 100%;
-    height: 32px;
+    height: 42px;
     border-radius: 6px;
-    padding: 6px;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 8px;
   }
 
   .calculator-theme-toggle::after {
     content: attr(aria-label);
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 600;
   }
 
@@ -1516,8 +1517,9 @@ body {
   }
 
   .entry-nav {
-    height: 28px;
-    padding: 4px;
+    height: 36px;
+    padding: 6px 8px;
+    margin-bottom: 8px;
   }
 
   .entry-info {
@@ -1525,10 +1527,10 @@ body {
   }
 
   .entry-time {
-    font-size: 8px;
-    min-width: 50px;
+    font-size: 13px;
+    min-width: 55px;
     padding-right: 6px;
-    height: 20px;
+    height: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1536,14 +1538,14 @@ body {
   }
 
   .entry-note {
-    font-size: 8px;
+    font-size: 13px;
     max-width: 80px;
-    height: 20px;
+    height: 24px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 0 0 auto;
-    padding-left: 4px;
+    padding-left: 6px;
   }
 
   .nav-button {
@@ -1725,6 +1727,7 @@ body {
     gap: 4px;
     margin-bottom: 4px;
     flex: 0 1 auto;
+    margin-top: 4px;
   }
   
   .denomination-row {
@@ -1792,6 +1795,7 @@ body {
   .history-navigation {
     padding: 8px 10px;
     gap: 8px;
+    margin-bottom: 8px;
   }
   
   .date-selector {
@@ -1818,6 +1822,7 @@ body {
   .entry-nav {
     height: 36px;
     padding: 6px 8px;
+    margin-bottom: 8px;
   }
   
   .entry-info {
