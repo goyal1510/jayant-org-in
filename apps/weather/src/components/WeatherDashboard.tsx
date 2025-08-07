@@ -54,7 +54,7 @@ export default function WeatherDashboard() {
     };
 
     loadInitialWeather();
-  });
+  },[]);
 
   // Save recent cities to localStorage whenever it changes
   useEffect(() => {
