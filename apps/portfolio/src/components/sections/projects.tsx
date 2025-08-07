@@ -1,68 +1,73 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Github, Eye } from "lucide-react"
+import { Github, ExternalLink, X } from "lucide-react"
+import { useState } from "react"
+import Image from "next/image"
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    description: "A full-stack e-commerce platform built with Next.js, TypeScript, and Stripe integration. Features include user authentication, product management, shopping cart, and payment processing.",
-    image: "/api/placeholder/400/250",
-    technologies: ["Next.js", "TypeScript", "Stripe", "PostgreSQL", "Tailwind CSS"],
-    github: "#",
-    live: "#",
-    featured: true
+    title: "Currency Calculator",
+    shortDescription: "Developed a personal calculator to total cash denomination, store multiple calculations per date, and add optional notes.",
+    fullDescription: "Developed a personal calculator to total cash denomination, store multiple calculations per date, and add optional notes. Integrated Supabase for backend storage with full CRUD functionality. Built with React and custom external CSS for a clean, responsive UI and smooth user interactions. Features include bundle counting, historical tracking, and data persistence.",
+    image: "/assets/ProjectImages/work-7.png",
+    technologies: ["React", "Supabase", "CSS", "CRUD Operations"],
+    githubLink: "https://github.com/goyal1510/currency-calculator-2",
+    liveLink: "https://currency-calculator-2.vercel.app/",
   },
   {
-    title: "Task Management App",
-    description: "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-    image: "/api/placeholder/400/250",
-    technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Express"],
-    github: "#",
-    live: "#",
-    featured: true
+    title: "Custom Drag & Drop Calculator",
+    shortDescription: "Built a drag-and-drop calculator using React and Zustand.",
+    fullDescription: "Built a drag-and-drop calculator using React and Zustand. Added dark mode, backspace, clear all, and duplicate prevention. Styled with Tailwind CSS and optimized with Vite. Features a calculator builder with drag-and-drop functionality.",
+    image: "/assets/ProjectImages/work-1.png",
+    technologies: ["React", "Zustand", "Tailwind CSS", "Vite", "Drag & Drop"],
+    githubLink: "https://github.com/goyal1510/custom-drag-drop-calculator",
+    liveLink: "https://custom-drag-drop-calculator.vercel.app/"
   },
   {
-    title: "Weather Dashboard",
-    description: "A beautiful weather dashboard that displays current weather and forecasts using OpenWeatherMap API with interactive charts and maps.",
-    image: "/api/placeholder/400/250",
-    technologies: ["React", "Chart.js", "OpenWeatherMap API", "CSS3"],
-    github: "#",
-    live: "#",
-    featured: false
+    title: "E-commerce Application",
+    shortDescription: "Built a full-featured e-commerce platform with product browsing, cart, and transactions.",
+    fullDescription: "Built a full-featured e-commerce platform with product browsing, cart, and transactions. Developed a responsive UI using React, React Router, and Redux. Integrated an API for real-time product updates. Features include authentication, cart functionality, and product management.",
+    image: "/assets/ProjectImages/work-3.png",
+    technologies: ["React", "Redux", "React Router", "API Integration"],
+    githubLink: "https://github.com/goyal1510/jayant-ecommerce-website",
+    liveLink: "https://jayant-ecommerce-website.vercel.app/"
   },
   {
-    title: "Portfolio Website",
-    description: "A modern, responsive portfolio website built with Next.js and Framer Motion animations. Features smooth scrolling and interactive elements.",
-    image: "/api/placeholder/400/250",
-    technologies: ["Next.js", "Framer Motion", "Tailwind CSS", "TypeScript"],
-    github: "#",
-    live: "#",
-    featured: false
+    title: "Todo App",
+    shortDescription: "Built a task management app with React and Vite.",
+    fullDescription: "Built a task management app with React and Vite. Enabled adding, editing, completing, and deleting tasks. Designed a clean, user-friendly UI for creating, updating, and tracking to-do lists.",
+    image: "/assets/ProjectImages/work-6.png",
+    technologies: ["React", "Vite", "Task Management", "CRUD Operations"],
+    githubLink: "https://github.com/goyal1510/todo-app",
+    liveLink: "https://todo-app-six-omega-87.vercel.app"
   },
   {
-    title: "Blog Platform",
-    description: "A content management system for blogs with markdown support, SEO optimization, and admin dashboard for content management.",
-    image: "/api/placeholder/400/250",
-    technologies: ["Next.js", "MDX", "Prisma", "PostgreSQL", "NextAuth"],
-    github: "#",
-    live: "#",
-    featured: false
+    title: "Game Hub",
+    shortDescription: "Developed a Game Hub featuring three interactive games: Rock Paper Scissors, Dare You, and Tic Tac Toe.",
+    fullDescription: "Developed a Game Hub featuring three interactive games: Rock Paper Scissors, Dare You, and Tic Tac Toe. Utilized HTML, CSS, and JavaScript to ensure simplicity and ease of use. A gaming platform where users can explore and play various games.",
+    image: "/assets/ProjectImages/work-2.png",
+    technologies: ["HTML", "CSS", "JavaScript", "Interactive Games"],
+    githubLink: "https://github.com/goyal1510/game-hub",
+    liveLink: "https://game-hub-five-plum.vercel.app/"
   },
   {
-    title: "Chat Application",
-    description: "Real-time chat application with user authentication, message history, and file sharing capabilities.",
-    image: "/api/placeholder/400/250",
-    technologies: ["React", "Socket.io", "Node.js", "MongoDB", "JWT"],
-    github: "#",
-    live: "#",
-    featured: false
+    title: "Jayant Weather App",
+    shortDescription: "Developed a weather application using JavaScript, OpenWeather API, and Tailwind CSS.",
+    fullDescription: "Developed a weather application using JavaScript, OpenWeather API, and Tailwind CSS. Implemented city-based search and geolocation-based weather retrieval. Designed a responsive UI for seamless experience across devices. A weather forecasting application that provides real-time weather updates.",
+    image: "/assets/ProjectImages/work-4.png",
+    technologies: ["JavaScript", "OpenWeather API", "Tailwind CSS", "Geolocation"],
+    githubLink: "https://github.com/goyal1510/jayant-weather-app",
+    liveLink: "https://jayant-weather-app.vercel.app"
   }
 ]
 
 export function Projects() {
+  const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null)
+
   return (
     <section id="projects" className="py-20 bg-muted/30">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -74,59 +79,57 @@ export function Projects() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Featured Projects
+            My Projects
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Here are some of the projects I&apos;ve worked on. Each project represents a unique challenge and learning experience.
+            Here are some of the projects I&apos;ve built to showcase my skills and passion for development.
           </p>
         </motion.div>
 
-        {/* Featured Projects */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          {projects.filter(p => p.featured).map((project, index) => (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {projects.map((project, index) => (
             <motion.div
               key={project.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
+              transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
+              className="group cursor-pointer"
+              onClick={() => setSelectedProject(project)}
             >
-              <Card className="group h-full overflow-hidden hover:shadow-lg transition-all duration-300">
-                <div className="relative overflow-hidden">
-                  <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                    <span className="text-muted-foreground">Project Image</span>
+              <Card className="h-full group hover:shadow-lg transition-all duration-300 hover:scale-105 hover:bg-primary/5 hover:border-primary/20">
+                                  <div className="relative overflow-hidden rounded-t-lg">
+                    <div className="h-48 overflow-hidden">
+                      <Image 
+                        src={project.image} 
+                        alt={project.title}
+                        width={400}
+                        height={192}
+                        className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
+                      />
+                    </div>
                   </div>
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
-                    <Button size="sm" variant="secondary" asChild>
-                      <a href={project.live} target="_blank" rel="noopener noreferrer">
-                        <Eye className="h-4 w-4 mr-2" />
-                        Live Demo
-                      </a>
-                    </Button>
-                    <Button size="sm" variant="secondary" asChild>
-                      <a href={project.github} target="_blank" rel="noopener noreferrer">
-                        <Github className="h-4 w-4 mr-2" />
-                        Code
-                      </a>
-                    </Button>
-                  </div>
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-xl">{project.title}</CardTitle>
-                  <CardDescription className="text-muted-foreground">
-                    {project.description}
-                  </CardDescription>
+                
+                <CardHeader className="pb-3">
+                  <CardTitle className="text-lg leading-tight">{project.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1 bg-primary/10 text-primary text-sm rounded-full"
-                      >
+                
+                <CardContent className="space-y-4">
+                  <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
+                    {project.shortDescription}
+                  </p>
+                  
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.slice(0, 3).map((tech) => (
+                      <Badge key={tech} variant="secondary" className="text-xs">
                         {tech}
-                      </span>
+                      </Badge>
                     ))}
+                    {project.technologies.length > 3 && (
+                      <Badge variant="secondary" className="text-xs">
+                        +{project.technologies.length - 3}
+                      </Badge>
+                    )}
                   </div>
                 </CardContent>
               </Card>
@@ -134,87 +137,75 @@ export function Projects() {
           ))}
         </div>
 
-        {/* Other Projects */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-2xl font-bold text-foreground mb-8 text-center">
-            Other Projects
-          </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {projects.filter(p => !p.featured).map((project, index) => (
-              <motion.div
-                key={project.title}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="group h-full hover:shadow-md transition-all duration-300">
-                  <div className="relative overflow-hidden">
-                    <div className="aspect-video bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center">
-                      <span className="text-muted-foreground text-sm">Project Image</span>
-                    </div>
-                    <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-2">
-                      <Button size="sm" variant="secondary" asChild>
-                        <a href={project.live} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="h-4 w-4" />
-                        </a>
-                      </Button>
-                      <Button size="sm" variant="secondary" asChild>
-                        <a href={project.github} target="_blank" rel="noopener noreferrer">
-                          <Github className="h-4 w-4" />
-                        </a>
-                      </Button>
+        {/* Netflix-style Modal */}
+        {selectedProject && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+            onClick={() => setSelectedProject(null)}
+          >
+                         <motion.div
+               initial={{ scale: 0.8, opacity: 0 }}
+               animate={{ scale: 1, opacity: 1 }}
+               exit={{ scale: 0.8, opacity: 0 }}
+               className="bg-background rounded-lg max-w-4xl w-full max-h-[90vh] overflow-y-auto"
+               onClick={(e) => e.stopPropagation()}
+             >
+               <div className="relative p-6">
+                 <Button
+                   variant="ghost"
+                   size="sm"
+                   className="absolute top-2 right-2 bg-muted hover:bg-muted/80 z-10"
+                   onClick={() => setSelectedProject(null)}
+                 >
+                   <X className="h-4 w-4" />
+                 </Button>
+               
+                                                   <div className="flex items-start justify-between mb-4 pt-8">
+                   <div>
+                     <h2 className="text-2xl font-bold text-foreground mb-2">{selectedProject.title}</h2>
+                   </div>
+                   <div className="flex space-x-2">
+                     <Button size="sm" variant="outline" asChild>
+                       <a href={selectedProject.githubLink} target="_blank" rel="noopener noreferrer">
+                         <Github className="h-4 w-4 mr-2" />
+                         Code
+                       </a>
+                     </Button>
+                     <Button size="sm" asChild>
+                       <a href={selectedProject.liveLink} target="_blank" rel="noopener noreferrer">
+                         <ExternalLink className="h-4 w-4 mr-2" />
+                         Live Demo
+                       </a>
+                     </Button>
+                   </div>
+                 </div>
+                
+                <div className="space-y-6">
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground mb-3">Description</h3>
+                    <p className="text-muted-foreground leading-relaxed whitespace-pre-line">
+                      {selectedProject.fullDescription}
+                    </p>
+                  </div>
+                  
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground mb-3">Technologies Used</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedProject.technologies.map((tech) => (
+                        <Badge key={tech} variant="secondary">
+                          {tech}
+                        </Badge>
+                      ))}
                     </div>
                   </div>
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg">{project.title}</CardTitle>
-                    <CardDescription className="text-sm line-clamp-2">
-                      {project.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex flex-wrap gap-1">
-                      {project.technologies.slice(0, 3).map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                      {project.technologies.length > 3 && (
-                        <span className="px-2 py-1 bg-muted text-muted-foreground text-xs rounded">
-                          +{project.technologies.length - 3}
-                        </span>
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Call to Action */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <Button size="lg" variant="outline" asChild>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-              <Github className="h-5 w-5 mr-2" />
-              View More on GitHub
-            </a>
-          </Button>
-        </motion.div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
       </div>
     </section>
   )

@@ -7,42 +7,55 @@ import { Calendar, MapPin, Building } from "lucide-react"
 
 const experiences = [
   {
-    title: "Senior Full Stack Developer",
-    company: "TechCorp Solutions",
-    location: "Remote",
-    period: "2023 - Present",
-    description: "Leading development of enterprise-level web applications using React, Node.js, and cloud technologies. Mentoring junior developers and implementing best practices.",
-    technologies: ["React", "Node.js", "TypeScript", "AWS", "Docker", "PostgreSQL"],
+    title: "Product Associate Engineer",
+    company: "Neuraoak Technologies Private Limited",
+    location: "Hyderabad",
+    period: "Mar 2025 - Present",
+    description: "Building RCM software features using Next.js (TypeScript) and Supabase, improving billing workflows and automating claims processing.",
+    technologies: ["Next.js", "TypeScript", "Supabase", "React", "JavaScript"],
     achievements: [
-      "Led a team of 5 developers to deliver a major e-commerce platform",
-      "Improved application performance by 40% through optimization",
-      "Implemented CI/CD pipelines reducing deployment time by 60%"
+      "Built RCM software features using Next JS (TypeScript) and Supabase, improving billing workflows",
+      "Automated claims processing, reducing manual effort by 40% and errors by 25%",
+      "Integrated Supabase for real-time data and auth, cutting backend load by 30%",
+      "Led UI improvements based on user feedback, boosting satisfaction"
     ]
   },
   {
-    title: "Full Stack Developer",
-    company: "InnovateTech",
-    location: "Bangalore, India",
-    period: "2021 - 2023",
-    description: "Developed and maintained multiple web applications using modern technologies. Collaborated with cross-functional teams to deliver high-quality products.",
-    technologies: ["React", "Express.js", "MongoDB", "Redis", "Jest", "Git"],
+    title: "Software Development Intern",
+    company: "HighRadius Technologies Private Ltd.",
+    location: "Bhubaneswar",
+    period: "Jul 2023 - Nov 2023",
+    description: "Designed and implemented REST APIs, optimized performance using Java technologies, and enabled seamless integration with multiple front-end applications.",
+    technologies: ["Java", "SQL", "Hibernate", "Struts", "Spring", "REST APIs"],
     achievements: [
-      "Built 3 major applications from concept to deployment",
-      "Reduced bug reports by 50% through improved testing",
-      "Mentored 2 junior developers"
+      "Designed and implemented 15+ REST APIs, enabling seamless integration with multiple front-end apps and third-party services",
+      "Optimized performance using Java, SQL, Hibernate, Struts, and Spring, improving response times by 30%",
+      "Mastered user requirements, UX design, and backend development for comprehensive product approach"
     ]
   },
   {
-    title: "Frontend Developer",
-    company: "StartupHub",
-    location: "Mumbai, India",
-    period: "2020 - 2021",
-    description: "Focused on creating responsive and user-friendly interfaces. Worked closely with designers to implement pixel-perfect designs.",
-    technologies: ["React", "JavaScript", "CSS3", "HTML5", "Figma"],
+    title: "Tech Summer Intern",
+    company: "HighRadius Technologies Private Ltd.",
+    location: "Bhubaneswar",
+    period: "May 2023 - Jul 2023",
+    description: "Spearheaded the creation of a full-stack web product, ensuring seamless integration across all components.",
+    technologies: ["Full Stack Development", "Web Development", "Product Development"],
     achievements: [
-      "Developed 5+ responsive web applications",
-      "Improved user engagement by 35% through UI/UX improvements",
-      "Collaborated with design team to create design system"
+      "Spearheaded the creation of a full-stack web product, ensuring seamless integration across all components",
+      "Mastered user requirements, UX design, and backend development for a comprehensive product approach"
+    ]
+  },
+  {
+    title: "Public Relations (PR) Intern",
+    company: "DESIRE FOUNDATION",
+    location: "Bhubaneswar",
+    period: "Sep 2022 - Aug 2023",
+    description: "Organized fieldwork campaigns and collaborated with cross-functional teams to enhance internal coordination.",
+    technologies: ["Communication", "Team Collaboration", "Project Management"],
+    achievements: [
+      "Organized a fieldwork campaign in slum areas, reaching 50+ children and their families, encouraging education",
+      "Engaged with parents and distributed 100+ notebooks to support education",
+      "Collaborated with cross-functional teams within the company to organize meetings and enhance internal coordination"
     ]
   }
 ]
@@ -154,43 +167,6 @@ export function Experience() {
             </motion.div>
           ))}
         </div>
-
-        {/* Education Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          viewport={{ once: true }}
-          className="mt-16"
-        >
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-2xl">Education</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="space-y-6">
-                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                  <div>
-                    <h4 className="text-lg font-semibold text-foreground">
-                      Bachelor of Technology in Computer Science
-                    </h4>
-                    <p className="text-muted-foreground">University of Technology</p>
-                  </div>
-                  <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                    <Calendar className="h-4 w-4" />
-                    <span>2016 - 2020</span>
-                  </div>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  <Badge variant="outline">Computer Science</Badge>
-                  <Badge variant="outline">Software Engineering</Badge>
-                  <Badge variant="outline">Data Structures</Badge>
-                  <Badge variant="outline">Algorithms</Badge>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
       </div>
     </section>
   )

@@ -12,6 +12,19 @@ export function Hero() {
     }
   }
 
+  const downloadResume = () => {
+    // Create a link element
+    const link = document.createElement('a')
+    link.href = '/assets/Jayant_Resume.pdf' // Updated path to assets folder
+    link.download = 'Jayant_Resume.pdf'
+    link.target = '_blank'
+    
+    // Append to body, click, and remove
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       {/* Background gradient */}
@@ -96,6 +109,7 @@ export function Hero() {
             <Mail className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </Button>
           <Button
+            onClick={downloadResume}
             variant="outline"
             size="lg"
             className="group"

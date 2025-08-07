@@ -6,33 +6,33 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from "lucide-react"
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Instagram } from "lucide-react"
 
 const contactInfo = [
   {
     icon: Mail,
     title: "Email",
-    value: "jayant@example.com",
-    href: "mailto:jayant@example.com"
+    value: "goyal151002@gmail.com",
+    href: "mailto:goyal151002@gmail.com"
   },
   {
     icon: Phone,
     title: "Phone",
-    value: "+91 98765 43210",
-    href: "tel:+919876543210"
+    value: "+91 94134 95328",
+    href: "tel:+919413495328"
   },
   {
     icon: MapPin,
     title: "Location",
-    value: "India",
-    href: "#"
+    value: "Hyderabad, India",
+    href: "https://maps.google.com/?q=Aditya+Empress+Towers,+8-1-307/3-8/AET,+beside+Passport+Office,+Shaikpet,+Hyderabad,+Telangana+500008"
   }
 ]
 
 const socialLinks = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Twitter, href: "#", label: "Twitter" },
+  { icon: Github, href: "https://github.com/goyal1510", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/jayant-29714220b/", label: "LinkedIn" },
+  { icon: Instagram, href: "https://www.instagram.com/goyal_1510/", label: "Instagram" },
 ]
 
 export function Contact() {
@@ -43,20 +43,38 @@ export function Contact() {
     message: ""
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setSubmitStatus("idle")
     
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000))
-    
-    // Reset form
-    setFormData({ name: "", email: "", subject: "", message: "" })
-    setIsSubmitting(false)
-    
-    // You can add actual form submission logic here
-    alert("Thank you for your message! I&apos;ll get back to you soon.")
+    try {
+      const formDataToSend = new FormData()
+      formDataToSend.append("access_key", "8b5c545b-75da-4b50-ae54-6e49852aa6b6")
+      formDataToSend.append("name", formData.name)
+      formDataToSend.append("email", formData.email)
+      formDataToSend.append("subject", `Portfolio - ${formData.subject}`)
+      formDataToSend.append("message", formData.message)
+      
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formDataToSend
+      })
+      
+      if (response.ok) {
+        setSubmitStatus("success")
+        setFormData({ name: "", email: "", subject: "", message: "" })
+      } else {
+        setSubmitStatus("error")
+      }
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    } catch (error) {
+      setSubmitStatus("error")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -112,6 +130,7 @@ export function Contact() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
+                  target="_blank"
                   className="flex items-center space-x-4 p-4 rounded-lg bg-background hover:bg-muted/50 transition-colors duration-200 group"
                 >
                   <div className="p-2 rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-200">
@@ -138,6 +157,7 @@ export function Contact() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     viewport={{ once: true }}
+                    target="_blank"
                     className="p-3 rounded-lg bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
                   >
                     <social.icon className="h-5 w-5" />
@@ -221,13 +241,41 @@ export function Contact() {
                     />
                   </div>
                   
+                  {/* Status Messages */}
+                  {submitStatus === "success" && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="p-4 bg-green-50 border border-green-200 rounded-lg"
+                    >
+                      <p className="text-green-800 text-sm">
+                        ✅ Thank you for your message! I&apos;ll get back to you soon.
+                      </p>
+                    </motion.div>
+                  )}
+                  
+                  {submitStatus === "error" && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="p-4 bg-red-50 border border-red-200 rounded-lg"
+                    >
+                      <p className="text-red-800 text-sm">
+                        ❌ Something went wrong. Please try again or contact me directly via email.
+                      </p>
+                    </motion.div>
+                  )}
+                  
                   <Button 
                     type="submit" 
                     className="w-full group"
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? (
-                      "Sending..."
+                      <>
+                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                        Sending...
+                      </>
                     ) : (
                       <>
                         Send Message

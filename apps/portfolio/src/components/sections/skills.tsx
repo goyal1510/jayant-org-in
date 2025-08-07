@@ -12,7 +12,10 @@ import {
   FileCode,
   FileText,
   GitBranch,
-  Package
+  Package,
+  Globe,
+  Zap,
+  Shield,
 } from "lucide-react"
 
 const skillCategories = [
@@ -20,10 +23,14 @@ const skillCategories = [
     title: "Frontend Development",
     icon: Code2,
     skills: [
-      { name: "React", level: 90, color: "bg-blue-500" },
+      { name: "HTML", level: 95, color: "bg-orange-500" },
+      { name: "CSS3", level: 92, color: "bg-blue-500" },
+      { name: "JavaScript", level: 88, color: "bg-yellow-500" },
       { name: "TypeScript", level: 85, color: "bg-blue-600" },
-      { name: "Next.js", level: 88, color: "bg-black" },
-      { name: "Tailwind CSS", level: 92, color: "bg-cyan-500" },
+      { name: "React", level: 90, color: "bg-cyan-500" },
+      { name: "Next.js", level: 85, color: "bg-slate-700" },
+      { name: "Redux", level: 80, color: "bg-purple-600" },
+      { name: "Tailwind CSS", level: 92, color: "bg-teal-500" },
     ]
   },
   {
@@ -31,9 +38,11 @@ const skillCategories = [
     icon: Database,
     skills: [
       { name: "Node.js", level: 85, color: "bg-green-600" },
-      { name: "Python", level: 80, color: "bg-yellow-600" },
       { name: "Express.js", level: 88, color: "bg-gray-600" },
-      { name: "PostgreSQL", level: 75, color: "bg-blue-700" },
+      { name: "MongoDB", level: 82, color: "bg-green-500" },
+      { name: "MySQL", level: 78, color: "bg-blue-700" },
+      { name: "Supabase", level: 75, color: "bg-green-400" },
+      { name: "JWT", level: 80, color: "bg-purple-500" },
     ]
   },
   {
@@ -41,30 +50,38 @@ const skillCategories = [
     icon: Settings,
     skills: [
       { name: "Git", level: 90, color: "bg-orange-600" },
-      { name: "Docker", level: 70, color: "bg-blue-500" },
-      { name: "AWS", level: 65, color: "bg-yellow-500" },
-      { name: "CI/CD", level: 75, color: "bg-purple-600" },
+      { name: "GitHub", level: 88, color: "bg-slate-700" },
+      { name: "Vercel", level: 85, color: "bg-indigo-600" },
+      { name: "Vite", level: 80, color: "bg-yellow-500" },
+      { name: "NPM", level: 92, color: "bg-red-500" },
+      { name: "PNPM", level: 85, color: "bg-orange-500" },
+      { name: "Bruno", level: 85, color: "bg-orange-400" },
     ]
   },
   {
-    title: "Design & UX",
-    icon: Palette,
+    title: "Programming Languages",
+    icon: Code,
     skills: [
-      { name: "Figma", level: 80, color: "bg-purple-500" },
-      { name: "Adobe XD", level: 75, color: "bg-pink-500" },
-      { name: "Responsive Design", level: 95, color: "bg-green-500" },
-      { name: "UI/UX Principles", level: 85, color: "bg-indigo-500" },
+      { name: "Java", level: 80, color: "bg-red-600" },
+      { name: "Markdown", level: 90, color: "bg-gray-600" },
+      { name: "Problem Solving", level: 88, color: "bg-purple-600" },
+      { name: "Time Management", level: 85, color: "bg-indigo-500" },
     ]
   }
 ]
 
 const techIcons = [
-  { icon: Code, name: "React", color: "text-blue-500" },
+  { icon: Code, name: "HTML", color: "text-orange-500" },
+  { icon: Palette, name: "CSS3", color: "text-blue-500" },
+  { icon: FileCode, name: "JavaScript", color: "text-yellow-500" },
+  { icon: FileText, name: "TypeScript", color: "text-blue-600" },
+  { icon: Code2, name: "React", color: "text-cyan-500" },
+  { icon: Globe, name: "Next.js", color: "text-gray-800" },
   { icon: Server, name: "Node.js", color: "text-green-600" },
-  { icon: FileCode, name: "TypeScript", color: "text-blue-600" },
-  { icon: FileText, name: "Python", color: "text-yellow-600" },
   { icon: GitBranch, name: "Git", color: "text-orange-600" },
-  { icon: Package, name: "Docker", color: "text-blue-500" },
+  { icon: Zap, name: "Vite", color: "text-yellow-500" },
+  { icon: Package, name: "Tailwind", color: "text-teal-500" },
+  { icon: Shield, name: "JWT", color: "text-purple-500" },
 ]
 
 export function Skills() {
@@ -162,50 +179,7 @@ export function Skills() {
           ))}
         </div>
 
-        {/* Additional Skills */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mt-16"
-        >
-          <Card>
-            <CardHeader>
-              <CardTitle>Additional Skills</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {[
-                  "RESTful APIs",
-                  "GraphQL",
-                  "MongoDB",
-                  "Redis",
-                  "Jest",
-                  "Cypress",
-                  "Webpack",
-                  "Vite",
-                  "Agile/Scrum",
-                  "JIRA",
-                  "Postman",
-                  "Swagger"
-                ].map((skill, index) => (
-                  <motion.div
-                    key={skill}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: index * 0.05 }}
-                    viewport={{ once: true }}
-                    className="flex items-center space-x-2 p-2 rounded-lg bg-muted/50 hover:bg-muted transition-colors duration-200"
-                  >
-                    <div className="w-2 h-2 bg-primary rounded-full" />
-                    <span className="text-sm text-muted-foreground">{skill}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
+
       </div>
     </section>
   )

@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Menu, X } from "lucide-react"
+import Image from "next/image"
 
 const navItems = [
   { name: "Home", href: "#home" },
@@ -12,6 +13,7 @@ const navItems = [
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
   { name: "Experience", href: "#experience" },
+  { name: "Certificates", href: "#certificates" },
   { name: "Contact", href: "#contact" },
 ]
 
@@ -64,9 +66,15 @@ export function Navigation() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-xl font-bold text-primary"
+            className="flex items-center"
           >
-            Jayant
+            <Image 
+              src="/assets/J_logo.png" 
+              alt="Jayant Logo" 
+              width={64}
+              height={64}
+              className="h-16 w-auto"
+            />
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -80,7 +88,7 @@ export function Navigation() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => scrollToSection(item.href)}
-                  className={`relative transition-colors duration-200 ${
+                  className={`relative transition-colors duration-200 font-semibold ${
                     isActive 
                       ? "text-primary" 
                       : "text-foreground/80 hover:text-primary"
@@ -137,7 +145,7 @@ export function Navigation() {
                   <button
                     key={item.name}
                     onClick={() => scrollToSection(item.href)}
-                    className={`block w-full text-left px-3 py-2 rounded-md transition-colors duration-200 ${
+                    className={`block w-full text-left px-3 py-2 rounded-md transition-colors duration-200 font-semibold ${
                       isActive
                         ? "text-primary bg-primary/10"
                         : "text-foreground/80 hover:text-primary hover:bg-accent"
