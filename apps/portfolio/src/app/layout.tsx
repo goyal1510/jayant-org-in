@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Jayant - Full Stack Developer",
-  description: "Full Stack Developer specializing in React, Node.js, and modern web technologies. Creating beautiful, functional, and user-centered digital experiences.",
+  description: "Full Stack Developer specializing in React, Next.js, Node.js, and modern web technologies. Creating beautiful, functional, and user-centered digital experiences.",
   keywords: ["Full Stack Developer", "React", "Node.js", "TypeScript", "Next.js", "Web Development"],
   authors: [{ name: "Jayant" }],
   creator: "Jayant",
@@ -35,15 +35,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://jayant.dev",
+    url: "https://portfolio.jayant.org.in",
     title: "Jayant - Full Stack Developer",
-    description: "Full Stack Developer specializing in React, Node.js, and modern web technologies.",
+    description: "Full Stack Developer specializing in React, Next.js, Node.js, and modern web technologies.",
     siteName: "Jayant Portfolio",
   },
   twitter: {
     card: "summary_large_image",
     title: "Jayant - Full Stack Developer",
-    description: "Full Stack Developer specializing in React, Node.js, and modern web technologies.",
+    description: "Full Stack Developer specializing in React, Next.js, Node.js, and modern web technologies.",
   },
 }
 
