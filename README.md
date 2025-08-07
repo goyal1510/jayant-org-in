@@ -206,5 +206,3 @@ jayant-org-in/
 ---
 
 **Built with ❤️ by Jayant**
-
-*This monorepo demonstrates modern web development practices, from simple applications to complex, feature-rich web apps. Each project showcases different aspects of Next.js, TypeScript, and modern application architecture.*
