@@ -19,6 +19,19 @@ export const metadata: Metadata = {
   keywords: ["Full Stack Developer", "React", "Node.js", "TypeScript", "Next.js", "Web Development"],
   authors: [{ name: "Jayant" }],
   creator: "Jayant",
+  icons: {
+    icon: [
+      { url: "/assets/Jayant_favicon_io/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/assets/Jayant_favicon_io/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [
+      { url: "/assets/Jayant_favicon_io/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    other: [
+      { rel: "android-chrome-192x192", url: "/assets/Jayant_favicon_io/android-chrome-192x192.png" },
+      { rel: "android-chrome-512x512", url: "/assets/Jayant_favicon_io/android-chrome-512x512.png" },
+    ],
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
