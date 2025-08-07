@@ -512,19 +512,21 @@ export default function CurrencyCalculator({ initialSession }: CurrencyCalculato
       </div>
 
       <div className="bottom-container">
-        <div className="note-input-container">
-          <input
-            placeholder="Add note..."
-            value={note}
-            onChange={(e) => setNote(e.target.value.slice(0, 16))}
-            maxLength={16}
-            className="note-input"
-          />
-          <span className="note-char-count">{note.length}/16</span>
-        </div>
-        <div className="total-amount">
-          <span className="total-label">Total:</span>
-          <span className="total-value">₹{total}</span>
+        <div className="note-total-row">
+          <div className="note-input-container">
+            <input
+              placeholder="Add note..."
+              value={note}
+              onChange={(e) => setNote(e.target.value.slice(0, 16))}
+              maxLength={16}
+              className="note-input"
+            />
+            <span className="note-char-count">{note.length}/16</span>
+          </div>
+          <div className="total-amount">
+            <span className="total-label">Total:</span>
+            <span className="total-value">₹{total}</span>
+          </div>
         </div>
         <button
           onClick={handleSave}
