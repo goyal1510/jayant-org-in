@@ -1166,14 +1166,14 @@ body {
   }
 
     .denominations-container {
-    padding: 6px;
-    gap: 3px;
+    padding: 8px;
+    gap: 4px;
     flex: 0 1 auto;
   }
   
   .denomination-row {
-    padding: 4px 6px;
-    gap: 3px;
+    padding: 6px 8px;
+    gap: 4px;
   }
 
   .denomination-label {
@@ -1183,10 +1183,10 @@ body {
 
   .denomination-input,
   .denomination-count {
-    width: 50px;
-    padding: 4px 6px;
-    font-size: 12px;
-    height: 26px;
+    width: 55px;
+    padding: 6px 8px;
+    font-size: 14px;
+    height: 32px;
   }
 
   .denomination-total {
@@ -1224,10 +1224,10 @@ body {
   }
 
   .total-amount {
-    height: 36px;
-    font-size: 16px;
-    padding: 0 10px;
-    min-width: 130px;
+    height: 40px;
+    font-size: 18px;
+    padding: 0 12px;
+    min-width: 140px;
   }
 
   .denomination-label,
@@ -1477,8 +1477,8 @@ body {
   }
 
   .save-button {
-    height: 32px;
-    font-size: 14px;
+    height: 38px;
+    font-size: 16px;
   }
 
   .action-button {
@@ -1719,33 +1719,33 @@ body {
   }
   
   .denominations-container {
-    padding: 4px;
-    gap: 2px;
-    margin-bottom: 2px;
+    padding: 6px;
+    gap: 4px;
+    margin-bottom: 4px;
     flex: 0 1 auto;
   }
   
   .denomination-row {
-    padding: 4px 6px;
-    gap: 3px;
+    padding: 6px 8px;
+    gap: 4px;
   }
   
   .denomination-label {
-    width: 35px;
-    font-size: 12px;
+    width: 40px;
+    font-size: 14px;
   }
   
   .denomination-input,
   .denomination-count {
-    width: 50px;
-    padding: 4px 6px;
-    font-size: 12px;
-    height: 26px;
+    width: 55px;
+    padding: 6px 8px;
+    font-size: 14px;
+    height: 32px;
   }
   
   .denomination-total {
-    padding-right: 4px;
-    font-size: 12px;
+    padding-right: 6px;
+    font-size: 14px;
   }
   
   .bottom-container {
@@ -1758,38 +1758,38 @@ body {
   }
   
   .note-input {
-    height: 28px;
-    font-size: 12px;
-    padding: 6px 10px;
-    padding-right: 35px;
+    height: 36px;
+    font-size: 14px;
+    padding: 8px 12px;
+    padding-right: 40px;
   }
   
   .note-char-count {
-    right: 6px;
-    font-size: 10px;
+    right: 8px;
+    font-size: 12px;
   }
   
   .total-amount {
-    height: 32px;
-    font-size: 14px;
-    padding: 0 8px;
-    min-width: 110px;
+    height: 40px;
+    font-size: 16px;
+    padding: 0 12px;
+    min-width: 120px;
   }
   
   .save-button {
-    height: 28px;
-    font-size: 13px;
+    height: 36px;
+    font-size: 15px;
   }
   
   .action-button {
-    min-width: 28px;
-    min-height: 28px;
-    padding: 4px;
+    min-width: 32px;
+    min-height: 32px;
+    padding: 6px;
   }
   
   .history-navigation {
-    padding: 6px 8px;
-    gap: 6px;
+    padding: 8px 10px;
+    gap: 8px;
   }
   
   .date-selector {
@@ -1826,38 +1826,38 @@ body {
   }
   
     .entry-time {
-    font-size: 11px;
-    min-width: 45px;
-    padding-right: 4px;
-    height: 24px;
+    font-size: 13px;
+    min-width: 50px;
+    padding-right: 6px;
+    height: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   .entry-note {
-    font-size: 11px;
-    max-width: 65px;
-    height: 24px;
+    font-size: 13px;
+    max-width: 70px;
+    height: 28px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-left: 4px;
+    padding-left: 6px;
   }
   
   .nav-button {
-    width: 24px;
-    height: 24px;
-    font-size: 14px;
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
   }
   
   .input-header {
-    padding: 0 6px 3px;
-    margin-bottom: 3px;
+    padding: 0 8px 4px;
+    margin-bottom: 4px;
   }
   
   .header-label {
-    font-size: 11px;
+    font-size: 13px;
   }
   
   .header-label:nth-child(1) {
