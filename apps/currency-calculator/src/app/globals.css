@@ -215,21 +215,21 @@ body {
   transform: translateY(0);
 }
 
-.history-button {
-  background: linear-gradient(45deg, var(--button-gradient-1), var(--button-gradient-2));
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 6px 12px;
-  font-size: 12px;
-  font-weight: 600;
-  cursor: pointer;
-  min-width: 60px;
-  text-align: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 4px rgba(79, 70, 229, 0.2);
-  flex-shrink: 0;
-}
+  .history-button {
+    background: linear-gradient(45deg, var(--button-gradient-1), var(--button-gradient-2));
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    min-width: 70px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(79, 70, 229, 0.2);
+    flex-shrink: 0;
+  }
 
 .history-button:hover {
   background: linear-gradient(45deg, var(--button-hover-1), var(--button-hover-2));
@@ -237,20 +237,20 @@ body {
   box-shadow: 0 4px 6px rgba(79, 70, 229, 0.3);
 }
 
-.sign-out-button {
-  padding: 6px 12px;
-  background-color: var(--danger-color);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-size: 12px;
-  font-weight: 600;
-  min-width: 60px;
-  text-align: center;
-  flex-shrink: 0;
-}
+  .sign-out-button {
+    padding: 8px 16px;
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 70px;
+    text-align: center;
+    flex-shrink: 0;
+  }
 
 .sign-out-button:hover {
   background-color: var(--error-text);
@@ -1161,8 +1161,8 @@ body {
   }
 
   .history-button {
-    font-size: 11px;
-    padding: 4px 8px;
+    font-size: 15px;
+    padding: 8px 12px;
   }
 
     .denominations-container {
@@ -1247,14 +1247,14 @@ body {
   }
 
   .entry-time {
-    font-size: 9px;
-    min-width: 45px;
-    padding-right: 4px;
+    font-size: 13px;
+    min-width: 55px;
+    padding-right: 6px;
   }
 
   .entry-note {
-    font-size: 9px;
-    max-width: 70px;
+    font-size: 13px;
+    max-width: 80px;
   }
 
   .total-label {
@@ -1308,25 +1308,25 @@ body {
     width: 45px;
   }
 
-  .date-selector {
-    padding: 4px 6px;
-    height: 28px;
+    .date-selector {
+    padding: 6px 8px;
+    height: 36px;
   }
-
+  
   .date-nav-btn {
-    width: 20px;
-    height: 20px;
-    font-size: 10px;
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
   }
 
-  .date-picker-container {
-    max-width: 90px;
+    .date-picker-container {
+    max-width: 110px;
   }
-
+  
   .date-picker-input {
-    height: 20px;
-    padding: 0 4px;
-    font-size: 9px;
+    height: 24px;
+    padding: 0 6px;
+    font-size: 12px;
   }
 }
 
@@ -1419,6 +1419,8 @@ body {
 
   .sign-out-button {
     order: 3;
+    font-size: 15px;
+    padding: 8px 12px;
   }
 
   .denominations-container {
@@ -1793,29 +1795,29 @@ body {
   }
   
   .date-selector {
-    padding: 4px 6px;
-    height: 28px;
+    padding: 6px 8px;
+    height: 36px;
   }
   
   .date-nav-btn {
-    width: 20px;
-    height: 20px;
-    font-size: 10px;
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
   }
   
   .date-picker-container {
-    max-width: 80px;
+    max-width: 100px;
   }
   
   .date-picker-input {
-    height: 20px;
-    padding: 0 4px;
-    font-size: 9px;
+    height: 24px;
+    padding: 0 6px;
+    font-size: 12px;
   }
   
   .entry-nav {
-    height: 28px;
-    padding: 4px 6px;
+    height: 36px;
+    padding: 6px 8px;
   }
   
   .entry-info {
@@ -1826,23 +1828,23 @@ body {
   }
   
     .entry-time {
-    font-size: 13px;
-    min-width: 50px;
-    padding-right: 6px;
-    height: 28px;
+    font-size: 15px;
+    min-width: 60px;
+    padding-right: 8px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
   .entry-note {
-    font-size: 13px;
-    max-width: 70px;
-    height: 28px;
+    font-size: 15px;
+    max-width: 80px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-left: 6px;
+    padding-left: 8px;
   }
   
   .nav-button {
