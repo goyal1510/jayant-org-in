@@ -15,8 +15,8 @@ const projects = [
     fullDescription: "Developed a personal calculator to total cash denomination, store multiple calculations per date, and add optional notes. Integrated Supabase for backend storage with full CRUD functionality. Built with React and custom external CSS for a clean, responsive UI and smooth user interactions. Features include bundle counting, historical tracking, and data persistence.",
     image: "/assets/ProjectImages/work-7.png",
     technologies: ["React", "Supabase", "CSS", "CRUD Operations"],
-    githubLink: "https://github.com/goyal1510/currency-calculator-2",
-    liveLink: "https://currency-calculator-2.vercel.app/",
+    githubLink: "https://github.com/goyal1510/jayant-org-in/tree/main/apps/currency-calculator",
+    liveLink: "https://currency-calculator.jayant.org.in/",
   },
   {
     title: "Custom Drag & Drop Calculator",
@@ -46,13 +46,13 @@ const projects = [
     liveLink: "https://todo-app-six-omega-87.vercel.app"
   },
   {
-    title: "Game Hub",
+    title: "Game Spot",
     shortDescription: "Developed a Game Hub featuring three interactive games: Rock Paper Scissors, Dare You, and Tic Tac Toe.",
     fullDescription: "Developed a Game Hub featuring three interactive games: Rock Paper Scissors, Dare You, and Tic Tac Toe. Utilized HTML, CSS, and JavaScript to ensure simplicity and ease of use. A gaming platform where users can explore and play various games.",
     image: "/assets/ProjectImages/work-2.png",
     technologies: ["HTML", "CSS", "JavaScript", "Interactive Games"],
-    githubLink: "https://github.com/goyal1510/game-hub",
-    liveLink: "https://game-hub-five-plum.vercel.app/"
+    githubLink: "https://github.com/goyal1510/jayant-org-in/tree/main/apps/game-spot",
+    liveLink: "https://game-spot.jayant.org.in/"
   },
   {
     title: "Jayant Weather App",
@@ -60,8 +60,17 @@ const projects = [
     fullDescription: "Developed a weather application using JavaScript, OpenWeather API, and Tailwind CSS. Implemented city-based search and geolocation-based weather retrieval. Designed a responsive UI for seamless experience across devices. A weather forecasting application that provides real-time weather updates.",
     image: "/assets/ProjectImages/work-4.png",
     technologies: ["JavaScript", "OpenWeather API", "Tailwind CSS", "Geolocation"],
-    githubLink: "https://github.com/goyal1510/jayant-weather-app",
-    liveLink: "https://jayant-weather-app.vercel.app"
+    githubLink: "https://github.com/goyal1510/jayant-org-in/tree/main/apps/weather",
+    liveLink: "https://weather.jayant.org.in/"
+  },
+  {
+    title: "Portfolio",
+    shortDescription: "Developed a portfolio website using Next.js, Tailwind CSS, and Framer Motion.",
+    fullDescription: "Developed a portfolio website using Next.js, Tailwind CSS, and Framer Motion. Implemented city-based search and geolocation-based weather retrieval. Designed a responsive UI for seamless experience across devices. A weather forecasting application that provides real-time weather updates.",
+    image: "/assets/ProjectImages/work-5.png",
+    technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Portfolio"],
+    githubLink: "https://github.com/goyal1510/jayant-org-in/tree/main/apps/portfolio",
+    liveLink: "https://portfolio.jayant.org.in/"
   }
 ]
 
