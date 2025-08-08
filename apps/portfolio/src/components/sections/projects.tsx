@@ -63,15 +63,6 @@ const projects = [
     githubLink: "https://github.com/goyal1510/jayant-org-in/tree/main/apps/weather",
     liveLink: "https://weather.jayant.org.in/"
   },
-  {
-    title: "Portfolio",
-    shortDescription: "Developed a portfolio website using Next.js, Tailwind CSS, and Framer Motion.",
-    fullDescription: "Developed a portfolio website using Next.js, Tailwind CSS, and Framer Motion. Implemented city-based search and geolocation-based weather retrieval. Designed a responsive UI for seamless experience across devices. A weather forecasting application that provides real-time weather updates.",
-    image: "/assets/ProjectImages/work-5.png",
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Portfolio"],
-    githubLink: "https://github.com/goyal1510/jayant-org-in/tree/main/apps/portfolio",
-    liveLink: "https://portfolio.jayant.org.in/"
-  }
 ]
 
 export function Projects() {
